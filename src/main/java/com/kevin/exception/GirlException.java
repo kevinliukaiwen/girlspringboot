@@ -1,5 +1,7 @@
 package com.kevin.exception;
 
+import com.kevin.enums.ResultEnum;
+
 /**
  * Created by kevin on 2018/1/21.
  */
@@ -14,8 +16,8 @@ public class GirlException extends RuntimeException {
         this.code = code;
     }
 
-    public GirlException(Integer code,String message) {
-        super(message);
-        this.code = code;
+    public GirlException(ResultEnum resultEnum) {
+        super(resultEnum.getMsg());
+        this.code = resultEnum.getCode();
     }
 }
